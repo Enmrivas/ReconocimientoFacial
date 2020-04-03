@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
-using DeepAI;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,19 +38,7 @@ namespace FaceRecog
 
         private void button3_Click(object sender, EventArgs e)
         {
-            // Ensure your DeepAI.Client NuGet package is up to date: https://www.nuget.org/packages/DeepAI.Client
-            // Example posting a image URL:
-
-            // Add this line to the top of your file
-
-            DeepAI_API api = new DeepAI_API(apiKey: "quickstart-QUdJIGlzIGNvbWluZy4uLi4K");
-
-            StandardApiResponse resp = api.callStandardApi("image-similarity", new
-            {
-                image1 = imgLost.Image,
-                image2 = imgTest.Image,
-            });
-            txtMatch.Text = api.objectAsJsonString(resp) + "% de diferencias";
+            
         }
 
         private void BusquedaAPI_FormClosed(object sender, FormClosedEventArgs e)
@@ -69,6 +56,11 @@ namespace FaceRecog
                 imgTest.Image = new Bitmap(opnfd.FileName);
                 imgTest.SizeMode = PictureBoxSizeMode.StretchImage;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

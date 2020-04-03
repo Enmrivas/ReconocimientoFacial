@@ -35,6 +35,7 @@
             this.button3 = new System.Windows.Forms.Button();
             this.txtMatch = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgLost)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgTest)).BeginInit();
             this.SuspendLayout();
@@ -80,11 +81,11 @@
             // 
             this.txtMatch.AutoSize = true;
             this.txtMatch.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F);
-            this.txtMatch.Location = new System.Drawing.Point(420, 360);
+            this.txtMatch.Location = new System.Drawing.Point(399, 359);
             this.txtMatch.Name = "txtMatch";
-            this.txtMatch.Size = new System.Drawing.Size(272, 63);
+            this.txtMatch.Size = new System.Drawing.Size(326, 63);
             this.txtMatch.TabIndex = 5;
-            this.txtMatch.Text = "--% Match";
+            this.txtMatch.Text = "100% Match";
             // 
             // label2
             // 
@@ -95,11 +96,22 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Persona Perdida";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(216, 359);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(177, 62);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Atras";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // BusquedaAPI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 449);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtMatch);
             this.Controls.Add(this.button3);
@@ -125,5 +137,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label txtMatch;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }
