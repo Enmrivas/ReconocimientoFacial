@@ -39,7 +39,7 @@ namespace FaceRecog
                 txtLastPlace.Text = dt.Rows[0]["UltimoLugar"].ToString();
                 txtState.Text = dt.Rows[0]["Estado"].ToString();
             }
-            pictureBox1.Image = new Bitmap("C:/Users/Enmri/Desktop/Images/" + txtName.Text + ".jpg");
+            pictureBox1.Image = new Bitmap("../../Imagenes/" + txtName.Text + ".jpg");
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             con.Close();
         }

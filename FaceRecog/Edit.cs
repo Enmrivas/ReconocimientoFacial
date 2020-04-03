@@ -57,7 +57,7 @@ namespace FaceRecog
             con.Close();
 
 
-            pictureBox1.Image.Save("C:/Users/Enmri/Desktop/Images/" + txtName.Text + ".jpg");
+            pictureBox1.Image.Save("../../Imagnes/" + txtName.Text + ".jpg");
             this.Close();
         }
 

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using DeepAI;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,14 +32,26 @@ namespace FaceRecog
             DataTable dt = new DataTable();
             adapt.Fill(dt);
             
-            imgLost.Image = new Bitmap("C:/Users/Enmri/Desktop/Images/" + dt.Rows[0]["Nombre"].ToString() + ".jpg");
+            imgLost.Image = new Bitmap("../../Imagenes/" + dt.Rows[0]["Nombre"].ToString() + ".jpg");
             imgLost.SizeMode = PictureBoxSizeMode.StretchImage;
             con.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            // Ensure your DeepAI.Client NuGet package is up to date: https://www.nuget.org/packages/DeepAI.Client
+            // Example posting a image URL:
 
+            // Add this line to the top of your file
+
+            DeepAI_API api = new DeepAI_API(apiKey: "quickstart-QUdJIGlzIGNvbWluZy4uLi4K");
+
+            StandardApiResponse resp = api.callStandardApi("image-similarity", new
+            {
+                image1 = imgLost.Image,
+                image2 = imgTest.Image,
+            });
+            txtMatch.Text = api.objectAsJsonString(resp) + "% de diferencias";
         }
 
         private void BusquedaAPI_FormClosed(object sender, FormClosedEventArgs e)

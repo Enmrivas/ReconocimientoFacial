@@ -31,7 +31,7 @@ namespace FaceRecog
 
         private void btnRegisterLP_Click(object sender, EventArgs e)
         {
-            pictureBox1.Image.Save("C:/Users/Enmri/Desktop/Images/"+txtName.Text+".jpg", ImageFormat.Jpeg);
+            pictureBox1.Image.Save("../../Imagenes/"+txtName.Text+".jpg", ImageFormat.Jpeg);
 
             if (txtName.Text == "" || txtLName.Text == "" || txtLastPlace.Text == "" || txtState.Text=="")
             {
